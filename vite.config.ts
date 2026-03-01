@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/elfenfeest/',
+  base: '/Elfenfeest/',
   server: {
-    open: '/elfenfeest/',
+    open: '/Elfenfeest/',
   },
 })
