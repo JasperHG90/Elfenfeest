@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Fairy wing -->
+  <ellipse cx="22" cy="24" rx="14" ry="20" fill="#c77dff" opacity="0.6" transform="rotate(-15 22 24)"/>
+  <ellipse cx="42" cy="24" rx="14" ry="20" fill="#c77dff" opacity="0.6" transform="rotate(15 42 24)"/>
+  <!-- Body -->
+  <ellipse cx="32" cy="38" rx="6" ry="10" fill="#52b788"/>
+  <!-- Head -->
+  <circle cx="32" cy="22" r="8" fill="#fde68a"/>
+  <!-- Elf hat -->
+  <polygon points="24,20 32,2 40,20" fill="#2d6a4f"/>
+  <!-- Star on hat tip -->
+  <circle cx="32" cy="4" r="3" fill="#f4c542"/>
+  <!-- Sparkles -->
+  <circle cx="12" cy="10" r="1.5" fill="#f4c542" opacity="0.8"/>
+  <circle cx="52" cy="14" r="1.5" fill="#f4c542" opacity="0.8"/>
+  <circle cx="8" cy="44" r="1" fill="#fde68a" opacity="0.6"/>
+  <circle cx="56" cy="40" r="1" fill="#fde68a" opacity="0.6"/>
+</svg>

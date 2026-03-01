@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elfenfeest - Sam's Magische Feestje</title>
+    <meta name="description" content="Je bent uitgenodigd voor een magisch elfenfeest!" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Griffy&family=Henny+Penny&family=Quicksand:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Shared magical background (visible behind both gate and invitation) -->
+    <div class="shared-bg" aria-hidden="true">
+      <div id="shared-bg-stars" class="shared-bg__stars"></div>
+      <div class="shared-bg__aurora"></div>
+      <div class="shared-bg__moon"></div>
+    </div>
+
+    <!-- ===== PHASE 1: GATE SCREEN ===== -->
+    <div id="gate-screen" class="gate-screen">
+
+      <!-- Magical background scene (hills, trees, mushrooms - sky/moon/stars are in shared-bg) -->
+      <div class="magic-bg" aria-hidden="true">
+        <!-- Background hills (furthest) -->
+        <svg class="hills hills--far" viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,220 C200,140 400,180 600,150 C800,120 1000,180 1200,140 C1300,125 1400,160 1440,150 L1440,320 L0,320 Z" fill="#1a3a2a" opacity="0.6"/>
+        </svg>
+
+        <!-- Magical trees (left) -->
+        <div class="magic-tree magic-tree--left">
+          <svg viewBox="0 0 120 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="50" y="100" width="20" height="100" fill="#3e2723" rx="4"/>
+            <ellipse cx="60" cy="70" rx="55" ry="65" fill="#1b4332"/>
+            <ellipse cx="60" cy="70" rx="55" ry="65" fill="url(#treeGlow1)" opacity="0.4"/>
+            <circle cx="30" cy="50" r="3" fill="#52b788" opacity="0.8" class="tree-light"/>
+            <circle cx="70" cy="40" r="2.5" fill="#52b788" opacity="0.7" class="tree-light"/>
+            <circle cx="50" cy="80" r="3" fill="#52b788" opacity="0.9" class="tree-light"/>
+            <circle cx="85" cy="65" r="2" fill="#52b788" opacity="0.6" class="tree-light"/>
+            <circle cx="40" cy="95" r="2.5" fill="#52b788" opacity="0.7" class="tree-light"/>
+            <defs>
+              <radialGradient id="treeGlow1" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#52b788" stop-opacity="0.5"/>
+                <stop offset="100%" stop-color="#52b788" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <!-- Magical trees (right) -->
+        <div class="magic-tree magic-tree--right">
+          <svg viewBox="0 0 120 200" xmlns="http://www.w3.org/2000/svg">
+            <rect x="50" y="100" width="20" height="100" fill="#3e2723" rx="4"/>
+            <ellipse cx="60" cy="70" rx="55" ry="65" fill="#1b4332"/>
+            <ellipse cx="60" cy="70" rx="55" ry="65" fill="url(#treeGlow2)" opacity="0.4"/>
+            <circle cx="35" cy="55" r="2.5" fill="#52b788" opacity="0.8" class="tree-light"/>
+            <circle cx="75" cy="45" r="3" fill="#52b788" opacity="0.7" class="tree-light"/>
+            <circle cx="55" cy="85" r="2" fill="#52b788" opacity="0.9" class="tree-light"/>
+            <circle cx="80" cy="70" r="2.5" fill="#52b788" opacity="0.6" class="tree-light"/>
+            <defs>
+              <radialGradient id="treeGlow2" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#52b788" stop-opacity="0.5"/>
+                <stop offset="100%" stop-color="#52b788" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <!-- Mid hills -->
+        <svg class="hills hills--mid" viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,240 C180,180 350,220 500,200 C650,180 800,230 950,195 C1100,160 1250,210 1440,190 L1440,320 L0,320 Z" fill="#1e4d35" opacity="0.7"/>
+        </svg>
+
+        <!-- Mushroom houses -->
+        <div class="mushroom-houses">
+          <!-- Red mushroom (left side) -->
+          <svg class="mushroom mushroom--red" viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg">
+            <rect x="28" y="45" width="24" height="45" rx="4" fill="#f5deb3"/>
+            <ellipse cx="40" cy="48" rx="38" ry="32" fill="#c0392b"/>
+            <circle cx="25" cy="38" r="6" fill="#e8e8e8" opacity="0.7"/>
+            <circle cx="48" cy="32" r="4" fill="#e8e8e8" opacity="0.6"/>
+            <circle cx="38" cy="48" r="3" fill="#e8e8e8" opacity="0.5"/>
+            <rect x="34" y="70" width="12" height="16" rx="6" fill="#8b6914"/>
+            <circle cx="40" cy="74" r="2" fill="#f4c542" opacity="0.8" class="mushroom-window"/>
+          </svg>
+          <!-- Purple mushroom (left-center) -->
+          <svg class="mushroom mushroom--purple" viewBox="0 0 60 70" xmlns="http://www.w3.org/2000/svg">
+            <rect x="22" y="35" width="16" height="35" rx="3" fill="#f5deb3"/>
+            <ellipse cx="30" cy="38" rx="28" ry="25" fill="#7b2d8e"/>
+            <circle cx="20" cy="30" r="4" fill="#c77dff" opacity="0.5"/>
+            <circle cx="38" cy="28" r="3" fill="#c77dff" opacity="0.4"/>
+            <rect x="26" y="54" width="8" height="12" rx="4" fill="#5c1a6e"/>
+            <circle cx="30" cy="58" r="1.5" fill="#c77dff" opacity="0.8" class="mushroom-window"/>
+          </svg>
+          <!-- Blue mushroom (right side) -->
+          <svg class="mushroom mushroom--blue" viewBox="0 0 70 80" xmlns="http://www.w3.org/2000/svg">
+            <rect x="25" y="40" width="20" height="40" rx="3" fill="#f5deb3"/>
+            <ellipse cx="35" cy="43" rx="33" ry="28" fill="#2980b9"/>
+            <circle cx="22" cy="33" r="5" fill="#85c1e9" opacity="0.5"/>
+            <circle cx="42" cy="30" r="3.5" fill="#85c1e9" opacity="0.4"/>
+            <rect x="30" y="62" width="10" height="14" rx="5" fill="#1a5276"/>
+            <circle cx="35" cy="66" r="2" fill="#85c1e9" opacity="0.8" class="mushroom-window"/>
+          </svg>
+        </div>
+
+        <!-- Glowing flowers -->
+        <div id="glow-flowers" class="glow-flowers"></div>
+
+        <!-- Winding path -->
+        <svg class="winding-path" viewBox="0 0 400 300" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
+          <path d="M200,0 C180,40 140,60 160,100 C180,140 230,150 210,200 C190,250 170,270 200,300" fill="none" stroke="#c4a35a" stroke-width="18" opacity="0.15" stroke-linecap="round"/>
+          <path d="M200,0 C180,40 140,60 160,100 C180,140 230,150 210,200 C190,250 170,270 200,300" fill="none" stroke="#c4a35a" stroke-width="6" opacity="0.1" stroke-linecap="round" stroke-dasharray="4 12"/>
+        </svg>
+
+        <!-- Foreground hills -->
+        <svg class="hills hills--near" viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,260 C120,230 300,260 450,240 C600,220 720,255 900,235 C1080,215 1260,250 1440,230 L1440,320 L0,320 Z" fill="#234f38" opacity="0.85"/>
+        </svg>
+      </div>
+
+      <!-- Background sparkles container -->
+      <div id="sparkles" class="sparkles" aria-hidden="true"></div>
+      <!-- Fireflies container -->
+      <div id="fireflies" class="fireflies" aria-hidden="true"></div>
+
+      <!-- Castle silhouette -->
+      <div class="castle" aria-hidden="true">
+        <svg class="castle__svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
+          <!-- Castle glow backdrop -->
+          <defs>
+            <radialGradient id="castleGlow" cx="50%" cy="30%" r="60%">
+              <stop offset="0%" stop-color="#f4c542" stop-opacity="0.08"/>
+              <stop offset="100%" stop-color="#f4c542" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="windowGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#f4c542" stop-opacity="0.9"/>
+              <stop offset="60%" stop-color="#f4a542" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="#f4a542" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <ellipse cx="400" cy="200" rx="350" ry="250" fill="url(#castleGlow)"/>
+
+          <!-- Left tower -->
+          <rect x="120" y="140" width="60" height="360" fill="#0f2a1c"/>
+          <polygon points="110,140 150,60 190,140" fill="#0f2a1c"/>
+          <rect x="118" y="100" width="8" height="40" fill="#0f2a1c"/>
+          <rect x="174" y="100" width="8" height="40" fill="#0f2a1c"/>
+          <!-- Pennant left -->
+          <polygon points="126,100 126,80 142,90" fill="#c0392b" opacity="0.7" class="pennant"/>
+          <!-- Crenellations left tower -->
+          <rect x="115" y="130" width="14" height="20" fill="#0f2a1c"/>
+          <rect x="140" y="130" width="14" height="20" fill="#0f2a1c"/>
+          <rect x="165" y="130" width="14" height="20" fill="#0f2a1c"/>
+          <!-- Left tower windows (glowing) -->
+          <ellipse cx="150" cy="220" rx="10" ry="14" fill="#1a4a30" opacity="0.6"/>
+          <ellipse cx="150" cy="220" rx="7" ry="10" fill="url(#windowGlow)" class="castle-window"/>
+          <ellipse cx="150" cy="310" rx="10" ry="14" fill="#1a4a30" opacity="0.6"/>
+          <ellipse cx="150" cy="310" rx="7" ry="10" fill="url(#windowGlow)" class="castle-window"/>
+
+          <!-- Left-center tower (tall) -->
+          <rect x="230" y="100" width="70" height="400" fill="#0f2a1c"/>
+          <polygon points="220,100 265,20 310,100" fill="#0f2a1c"/>
+          <rect x="258" y="40" width="14" height="60" fill="#0f2a1c"/>
+          <!-- Flag -->
+          <polygon points="272,40 305,55 272,70" fill="#2d6a4f" opacity="0.7" class="pennant"/>
+          <!-- Crenellations -->
+          <rect x="225" y="90" width="16" height="20" fill="#0f2a1c"/>
+          <rect x="253" y="90" width="16" height="20" fill="#0f2a1c"/>
+          <rect x="281" y="90" width="16" height="20" fill="#0f2a1c"/>
+          <!-- Windows (glowing) -->
+          <ellipse cx="265" cy="180" rx="12" ry="16" fill="#1a4a30" opacity="0.6"/>
+          <ellipse cx="265" cy="180" rx="8" ry="11" fill="url(#windowGlow)" class="castle-window"/>
+          <ellipse cx="265" cy="270" rx="12" ry="16" fill="#1a4a30" opacity="0.6"/>
+          <ellipse cx="265" cy="270" rx="8" ry="11" fill="url(#windowGlow)" class="castle-window"/>
+          <ellipse cx="265" cy="360" rx="12" ry="16" fill="#1a4a30" opacity="0.6"/>
+          <ellipse cx="265" cy="360" rx="8" ry="11" fill="url(#windowGlow)" class="castle-window"/>
+
+          <!-- Main center body -->
+          <rect x="310" y="180" width="180" height="320" fill="#0f2a1c"/>
+          <!-- Big arched entrance -->
+          <rect x="370" y="360" width="60" height="140" rx="30" fill="#1a4a30" opacity="0.5"/>
+          <!-- Entrance glow -->
+          <rect x="375" y="365" width="50" height="135" rx="25" fill="#f4c542" opacity="0.06"/>
+          <!-- Center upper windows (glowing) -->
+          <ellipse cx="355" cy="250" rx="14" ry="18" fill="#1a4a30" opacity="0.6"/>
+          <ellipse cx="355" cy="250" rx="10" ry="13" fill="url(#windowGlow)" class="castle-window"/>
+          <ellipse cx="445" cy="250" rx="14" ry="18" fill="#1a4a30" opacity="0.6"/>
+          <ellipse cx="445" cy="250" rx="10" ry="13" fill="url(#windowGlow)" class="castle-window"/>
+          <ellipse cx="400" cy="240" rx="16" ry="20" fill="#1a4a30" opacity="0.6"/>
+          <ellipse cx="400" cy="240" rx="11" ry="14" fill="url(#windowGlow)" class="castle-window"/>
+          <!-- Crenellations center -->
+          <rect x="305" y="170" width="18" height="22" fill="#0f2a1c"/>
+          <rect x="335" y="170" width="18" height="22" fill="#0f2a1c"/>
+          <rect x="365" y="170" width="18" height="22" fill="#0f2a1c"/>
+          <rect x="395" y="170" width="18" height="22" fill="#0f2a1c"/>
+          <rect x="425" y="170" width="18" height="22" fill="#0f2a1c"/>
+          <rect x="455" y="170" width="18" height="22" fill="#0f2a1c"/>
+          <rect x="479" y="170" width="18" height="22" fill="#0f2a1c"/>
+
+          <!-- Right-center tower (tall) -->
+          <rect x="500" y="100" width="70" height="400" fill="#0f2a1c"/>
+          <polygon points="490,100 535,20 580,100" fill="#0f2a1c"/>
+          <rect x="528" y="40" width="14" height="60" fill="#0f2a1c"/>
+          <!-- Flag -->
+          <polygon points="528,40 495,55 528,70" fill="#2d6a4f" opacity="0.7" class="pennant"/>
+          <!-- Crenellations -->
+          <rect x="495" y="90" width="16" height="20" fill="#0f2a1c"/>
+          <rect x="523" y="90" width="16" height="20" fill="#0f2a1c"/>
+          <rect x="551" y="90" width="16" height="20" fill="#0f2a1c"/>
+          <!-- Windows (glowing) -->
+          <ellipse cx="535" cy="180" rx="12" ry="16" fill="#1a4a30" opacity="0.6"/>
+          <ellipse cx="535" cy="180" rx="8" ry="11" fill="url(#windowGlow)" class="castle-window"/>
+          <ellipse cx="535" cy="270" rx="12" ry="16" fill="#1a4a30" opacity="0.6"/>
+          <ellipse cx="535" cy="270" rx="8" ry="11" fill="url(#windowGlow)" class="castle-window"/>
+          <ellipse cx="535" cy="360" rx="12" ry="16" fill="#1a4a30" opacity="0.6"/>
+          <ellipse cx="535" cy="360" rx="8" ry="11" fill="url(#windowGlow)" class="castle-window"/>
+
+          <!-- Right tower -->
+          <rect x="620" y="140" width="60" height="360" fill="#0f2a1c"/>
+          <polygon points="610,140 650,60 690,140" fill="#0f2a1c"/>
+          <rect x="618" y="100" width="8" height="40" fill="#0f2a1c"/>
+          <rect x="674" y="100" width="8" height="40" fill="#0f2a1c"/>
+          <!-- Pennant right -->
+          <polygon points="674,100 674,80 658,90" fill="#7b2d8e" opacity="0.7" class="pennant"/>
+          <!-- Crenellations right tower -->
+          <rect x="615" y="130" width="14" height="20" fill="#0f2a1c"/>
+          <rect x="640" y="130" width="14" height="20" fill="#0f2a1c"/>
+          <rect x="665" y="130" width="14" height="20" fill="#0f2a1c"/>
+          <!-- Right tower windows (glowing) -->
+          <ellipse cx="650" cy="220" rx="10" ry="14" fill="#1a4a30" opacity="0.6"/>
+          <ellipse cx="650" cy="220" rx="7" ry="10" fill="url(#windowGlow)" class="castle-window"/>
+          <ellipse cx="650" cy="310" rx="10" ry="14" fill="#1a4a30" opacity="0.6"/>
+          <ellipse cx="650" cy="310" rx="7" ry="10" fill="url(#windowGlow)" class="castle-window"/>
+
+          <!-- Connecting walls -->
+          <rect x="180" y="240" width="50" height="260" fill="#0f2a1c"/>
+          <rect x="570" y="240" width="50" height="260" fill="#0f2a1c"/>
+          <!-- Wall crenellations -->
+          <rect x="178" y="232" width="12" height="18" fill="#0f2a1c"/>
+          <rect x="198" y="232" width="12" height="18" fill="#0f2a1c"/>
+          <rect x="218" y="232" width="12" height="18" fill="#0f2a1c"/>
+          <rect x="568" y="232" width="12" height="18" fill="#0f2a1c"/>
+          <rect x="588" y="232" width="12" height="18" fill="#0f2a1c"/>
+          <rect x="608" y="232" width="12" height="18" fill="#0f2a1c"/>
+        </svg>
+      </div>
+
+      <!-- Flying elves container -->
+      <div id="flying-elves" class="flying-elves" aria-hidden="true"></div>
+
+      <!-- Gate elf characters with speech bubbles -->
+      <div class="gate-elves" id="gate-elves" aria-hidden="true">
+        <div class="gate-elf gate-elf--left" id="gate-elf-left">
+          <div class="gate-elf__bubble gate-elf__bubble--1">
+            <p>Hoi! Kom je ook bij ons feesten?</p>
+          </div>
+          <div class="gate-elf__sprite gate-elf__sprite--wave"></div>
+        </div>
+        <div class="gate-elf gate-elf--right" id="gate-elf-right">
+          <div class="gate-elf__bubble gate-elf__bubble--2">
+            <p>We hebben je nodig!</p>
+          </div>
+          <div class="gate-elf__sprite gate-elf__sprite--beckon"></div>
+        </div>
+        <div class="gate-elf gate-elf--center" id="gate-elf-center">
+          <div class="gate-elf__bubble gate-elf__bubble--3">
+            <p>Spreek het wachtwoord en kom binnen!</p>
+          </div>
+          <div class="gate-elf__sprite gate-elf__sprite--point"></div>
+        </div>
+      </div>
+
+      <!-- Gate structure -->
+      <div class="gate" id="gate">
+        <!-- Gate arch frame -->
+        <div class="gate__arch">
+          <div class="gate__glow" aria-hidden="true"></div>
+        </div>
+        <!-- Gate doors -->
+        <div class="gate__doors">
+          <div class="gate__door gate__door--left">
+            <div class="gate__door-panel">
+              <div class="gate__hinge gate__hinge--top"></div>
+              <div class="gate__hinge gate__hinge--bottom"></div>
+              <div class="gate__handle"></div>
+              <div class="gate__plank gate__plank--1"></div>
+              <div class="gate__plank gate__plank--2"></div>
+              <div class="gate__plank gate__plank--3"></div>
+            </div>
+          </div>
+          <div class="gate__door gate__door--right">
+            <div class="gate__door-panel">
+              <div class="gate__hinge gate__hinge--top"></div>
+              <div class="gate__hinge gate__hinge--bottom"></div>
+              <div class="gate__handle"></div>
+              <div class="gate__plank gate__plank--1"></div>
+              <div class="gate__plank gate__plank--2"></div>
+              <div class="gate__plank gate__plank--3"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Golden light behind the doors -->
+        <div class="gate__light" aria-hidden="true"></div>
+      </div>
+
+      <!-- Code input area -->
+      <div class="code-input" id="code-input">
+        <p class="code-input__prompt">Spreek het magische wachtwoord uit...</p>
+        <div class="code-input__field-wrapper">
+          <input
+            type="text"
+            id="magic-code"
+            class="code-input__field"
+            maxlength="10"
+            autocomplete="off"
+            spellcheck="false"
+            aria-label="Magisch wachtwoord"
+          />
+        </div>
+        <p class="code-input__error" id="code-error" aria-live="polite"></p>
+      </div>
+
+      <!-- Burst sparkles (shown on unlock) -->
+      <div id="burst-sparkles" class="burst-sparkles" aria-hidden="true"></div>
+    </div>
+
+    <!-- ===== PHASE 2: INVITATION CONTENT ===== -->
+    <div id="invitation" class="invitation" aria-hidden="true">
+      <!-- Fixed magical background: castle + elven forest (sky/moon/stars are in shared-bg) -->
+      <div class="invite-bg" aria-hidden="true">
+        <!-- Forest hills (back) -->
+        <svg class="invite-bg__hills invite-bg__hills--far" viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,280 C160,200 320,240 480,210 C640,180 800,240 960,200 C1120,160 1280,220 1440,190 L1440,400 L0,400 Z" fill="#1a3a2a" opacity="0.7"/>
+        </svg>
+        <!-- Forest trees left -->
+        <div class="invite-bg__trees invite-bg__trees--left">
+          <svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+            <rect x="30" y="140" width="16" height="160" fill="#3e2723" rx="3"/>
+            <ellipse cx="38" cy="110" rx="36" ry="50" fill="#1b4332"/>
+            <circle cx="25" cy="95" r="2.5" fill="#52b788" opacity="0.7" class="tree-light"/>
+            <circle cx="48" cy="85" r="2" fill="#52b788" opacity="0.6" class="tree-light"/>
+            <circle cx="35" cy="120" r="3" fill="#52b788" opacity="0.8" class="tree-light"/>
+            <rect x="100" y="120" width="20" height="180" fill="#3e2723" rx="4"/>
+            <ellipse cx="110" cy="85" rx="45" ry="55" fill="#1b4332"/>
+            <circle cx="90" cy="70" r="3" fill="#52b788" opacity="0.7" class="tree-light"/>
+            <circle cx="125" cy="60" r="2.5" fill="#52b788" opacity="0.8" class="tree-light"/>
+            <circle cx="105" cy="100" r="2" fill="#52b788" opacity="0.6" class="tree-light"/>
+            <rect x="165" y="155" width="14" height="145" fill="#3e2723" rx="3"/>
+            <ellipse cx="172" cy="125" rx="30" ry="42" fill="#1b4332"/>
+            <circle cx="160" cy="115" r="2" fill="#52b788" opacity="0.7" class="tree-light"/>
+            <circle cx="180" cy="108" r="2.5" fill="#52b788" opacity="0.6" class="tree-light"/>
+          </svg>
+        </div>
+        <!-- Forest trees right -->
+        <div class="invite-bg__trees invite-bg__trees--right">
+          <svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+            <rect x="15" y="150" width="14" height="150" fill="#3e2723" rx="3"/>
+            <ellipse cx="22" cy="120" rx="30" ry="42" fill="#1b4332"/>
+            <circle cx="12" cy="108" r="2.5" fill="#52b788" opacity="0.7" class="tree-light"/>
+            <circle cx="32" cy="100" r="2" fill="#52b788" opacity="0.6" class="tree-light"/>
+            <rect x="80" y="115" width="20" height="185" fill="#3e2723" rx="4"/>
+            <ellipse cx="90" cy="80" rx="45" ry="55" fill="#1b4332"/>
+            <circle cx="70" cy="65" r="3" fill="#52b788" opacity="0.8" class="tree-light"/>
+            <circle cx="108" cy="58" r="2.5" fill="#52b788" opacity="0.7" class="tree-light"/>
+            <circle cx="85" cy="95" r="2" fill="#52b788" opacity="0.6" class="tree-light"/>
+            <rect x="155" y="135" width="16" height="165" fill="#3e2723" rx="3"/>
+            <ellipse cx="163" cy="105" rx="36" ry="50" fill="#1b4332"/>
+            <circle cx="150" cy="90" r="2.5" fill="#52b788" opacity="0.7" class="tree-light"/>
+            <circle cx="175" cy="82" r="2" fill="#52b788" opacity="0.8" class="tree-light"/>
+          </svg>
+        </div>
+        <!-- Castle -->
+        <svg class="invite-bg__castle" viewBox="0 0 800 500" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="invCastleGlow" cx="50%" cy="30%" r="60%">
+              <stop offset="0%" stop-color="#f4c542" stop-opacity="0.06"/>
+              <stop offset="100%" stop-color="#f4c542" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="invWindowGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#f4c542" stop-opacity="0.8"/>
+              <stop offset="60%" stop-color="#f4a542" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#f4a542" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <ellipse cx="400" cy="200" rx="350" ry="250" fill="url(#invCastleGlow)"/>
+          <!-- Left tower -->
+          <rect x="120" y="140" width="60" height="360" fill="#0f2a1c"/>
+          <polygon points="110,140 150,60 190,140" fill="#0f2a1c"/>
+          <rect x="118" y="100" width="8" height="40" fill="#0f2a1c"/>
+          <rect x="174" y="100" width="8" height="40" fill="#0f2a1c"/>
+          <polygon points="126,100 126,80 142,90" fill="#c0392b" opacity="0.6" class="pennant"/>
+          <rect x="115" y="130" width="14" height="20" fill="#0f2a1c"/>
+          <rect x="140" y="130" width="14" height="20" fill="#0f2a1c"/>
+          <rect x="165" y="130" width="14" height="20" fill="#0f2a1c"/>
+          <ellipse cx="150" cy="220" rx="7" ry="10" fill="url(#invWindowGlow)" class="castle-window"/>
+          <ellipse cx="150" cy="310" rx="7" ry="10" fill="url(#invWindowGlow)" class="castle-window"/>
+          <!-- Left-center tower -->
+          <rect x="230" y="100" width="70" height="400" fill="#0f2a1c"/>
+          <polygon points="220,100 265,20 310,100" fill="#0f2a1c"/>
+          <rect x="258" y="40" width="14" height="60" fill="#0f2a1c"/>
+          <polygon points="272,40 305,55 272,70" fill="#2d6a4f" opacity="0.6" class="pennant"/>
+          <rect x="225" y="90" width="16" height="20" fill="#0f2a1c"/>
+          <rect x="253" y="90" width="16" height="20" fill="#0f2a1c"/>
+          <rect x="281" y="90" width="16" height="20" fill="#0f2a1c"/>
+          <ellipse cx="265" cy="180" rx="8" ry="11" fill="url(#invWindowGlow)" class="castle-window"/>
+          <ellipse cx="265" cy="270" rx="8" ry="11" fill="url(#invWindowGlow)" class="castle-window"/>
+          <ellipse cx="265" cy="360" rx="8" ry="11" fill="url(#invWindowGlow)" class="castle-window"/>
+          <!-- Main center body -->
+          <rect x="310" y="180" width="180" height="320" fill="#0f2a1c"/>
+          <rect x="370" y="360" width="60" height="140" rx="30" fill="#1a4a30" opacity="0.5"/>
+          <rect x="375" y="365" width="50" height="135" rx="25" fill="#f4c542" opacity="0.04"/>
+          <ellipse cx="355" cy="250" rx="10" ry="13" fill="url(#invWindowGlow)" class="castle-window"/>
+          <ellipse cx="445" cy="250" rx="10" ry="13" fill="url(#invWindowGlow)" class="castle-window"/>
+          <ellipse cx="400" cy="240" rx="11" ry="14" fill="url(#invWindowGlow)" class="castle-window"/>
+          <rect x="305" y="170" width="18" height="22" fill="#0f2a1c"/>
+          <rect x="335" y="170" width="18" height="22" fill="#0f2a1c"/>
+          <rect x="365" y="170" width="18" height="22" fill="#0f2a1c"/>
+          <rect x="395" y="170" width="18" height="22" fill="#0f2a1c"/>
+          <rect x="425" y="170" width="18" height="22" fill="#0f2a1c"/>
+          <rect x="455" y="170" width="18" height="22" fill="#0f2a1c"/>
+          <rect x="479" y="170" width="18" height="22" fill="#0f2a1c"/>
+          <!-- Right-center tower -->
+          <rect x="500" y="100" width="70" height="400" fill="#0f2a1c"/>
+          <polygon points="490,100 535,20 580,100" fill="#0f2a1c"/>
+          <rect x="528" y="40" width="14" height="60" fill="#0f2a1c"/>
+          <polygon points="528,40 495,55 528,70" fill="#2d6a4f" opacity="0.6" class="pennant"/>
+          <rect x="495" y="90" width="16" height="20" fill="#0f2a1c"/>
+          <rect x="523" y="90" width="16" height="20" fill="#0f2a1c"/>
+          <rect x="551" y="90" width="16" height="20" fill="#0f2a1c"/>
+          <ellipse cx="535" cy="180" rx="8" ry="11" fill="url(#invWindowGlow)" class="castle-window"/>
+          <ellipse cx="535" cy="270" rx="8" ry="11" fill="url(#invWindowGlow)" class="castle-window"/>
+          <ellipse cx="535" cy="360" rx="8" ry="11" fill="url(#invWindowGlow)" class="castle-window"/>
+          <!-- Right tower -->
+          <rect x="620" y="140" width="60" height="360" fill="#0f2a1c"/>
+          <polygon points="610,140 650,60 690,140" fill="#0f2a1c"/>
+          <rect x="618" y="100" width="8" height="40" fill="#0f2a1c"/>
+          <rect x="674" y="100" width="8" height="40" fill="#0f2a1c"/>
+          <polygon points="674,100 674,80 658,90" fill="#7b2d8e" opacity="0.6" class="pennant"/>
+          <rect x="615" y="130" width="14" height="20" fill="#0f2a1c"/>
+          <rect x="640" y="130" width="14" height="20" fill="#0f2a1c"/>
+          <rect x="665" y="130" width="14" height="20" fill="#0f2a1c"/>
+          <ellipse cx="650" cy="220" rx="7" ry="10" fill="url(#invWindowGlow)" class="castle-window"/>
+          <ellipse cx="650" cy="310" rx="7" ry="10" fill="url(#invWindowGlow)" class="castle-window"/>
+          <!-- Connecting walls -->
+          <rect x="180" y="240" width="50" height="260" fill="#0f2a1c"/>
+          <rect x="570" y="240" width="50" height="260" fill="#0f2a1c"/>
+          <rect x="178" y="232" width="12" height="18" fill="#0f2a1c"/>
+          <rect x="198" y="232" width="12" height="18" fill="#0f2a1c"/>
+          <rect x="218" y="232" width="12" height="18" fill="#0f2a1c"/>
+          <rect x="568" y="232" width="12" height="18" fill="#0f2a1c"/>
+          <rect x="588" y="232" width="12" height="18" fill="#0f2a1c"/>
+          <rect x="608" y="232" width="12" height="18" fill="#0f2a1c"/>
+        </svg>
+        <!-- Forest hills (front) -->
+        <svg class="invite-bg__hills invite-bg__hills--near" viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0,300 C120,260 300,290 450,270 C600,250 720,280 900,260 C1080,240 1260,275 1440,255 L1440,400 L0,400 Z" fill="#234f38" opacity="0.9"/>
+        </svg>
+        <!-- Mushrooms -->
+        <div class="invite-bg__mushrooms">
+          <svg class="invite-bg__mushroom invite-bg__mushroom--1" viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg">
+            <rect x="28" y="45" width="24" height="45" rx="4" fill="#f5deb3"/>
+            <ellipse cx="40" cy="48" rx="38" ry="32" fill="#c0392b"/>
+            <circle cx="25" cy="38" r="6" fill="#e8e8e8" opacity="0.7"/>
+            <circle cx="48" cy="32" r="4" fill="#e8e8e8" opacity="0.6"/>
+            <circle cx="40" cy="74" r="2" fill="#f4c542" opacity="0.8" class="mushroom-window"/>
+          </svg>
+          <svg class="invite-bg__mushroom invite-bg__mushroom--2" viewBox="0 0 60 70" xmlns="http://www.w3.org/2000/svg">
+            <rect x="22" y="35" width="16" height="35" rx="3" fill="#f5deb3"/>
+            <ellipse cx="30" cy="38" rx="28" ry="25" fill="#7b2d8e"/>
+            <circle cx="20" cy="30" r="4" fill="#c77dff" opacity="0.5"/>
+            <circle cx="38" cy="28" r="3" fill="#c77dff" opacity="0.4"/>
+            <circle cx="30" cy="58" r="1.5" fill="#c77dff" opacity="0.8" class="mushroom-window"/>
+          </svg>
+          <svg class="invite-bg__mushroom invite-bg__mushroom--3" viewBox="0 0 70 80" xmlns="http://www.w3.org/2000/svg">
+            <rect x="25" y="40" width="20" height="40" rx="3" fill="#f5deb3"/>
+            <ellipse cx="35" cy="43" rx="33" ry="28" fill="#2980b9"/>
+            <circle cx="22" cy="33" r="5" fill="#85c1e9" opacity="0.5"/>
+            <circle cx="42" cy="30" r="3.5" fill="#85c1e9" opacity="0.4"/>
+            <circle cx="35" cy="66" r="2" fill="#85c1e9" opacity="0.8" class="mushroom-window"/>
+          </svg>
+        </div>
+        <!-- Glowing flowers -->
+        <div id="invite-bg-flowers" class="invite-bg__flowers"></div>
+        <!-- Flying pirate ship (fairy-dusted, chasing fairies!) -->
+        <div id="pirate-ship" class="flying-pirate-ship">
+          <div class="flying-pirate-ship__dust" id="ship-dust"></div>
+          <div class="flying-pirate-ship__inner">
+            <svg class="pirate-ship__svg" viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg">
+              <!-- Fairy dust glow under the ship -->
+              <ellipse cx="150" cy="210" rx="120" ry="15" fill="#f4c542" opacity="0.08"/>
+              <ellipse cx="150" cy="210" rx="80" ry="8" fill="#c77dff" opacity="0.06"/>
+              <!-- Hull -->
+              <path d="M40,150 Q30,150 35,170 L55,200 Q150,218 245,200 L265,170 Q270,150 260,150 Z" fill="#5d4037"/>
+              <path d="M50,155 Q40,155 44,172 L60,198 Q150,215 240,198 L256,172 Q260,155 250,155 Z" fill="#795548"/>
+              <!-- Hull planks -->
+              <line x1="60" y1="165" x2="240" y2="165" stroke="#4e342e" stroke-width="1" opacity="0.4"/>
+              <line x1="55" y1="180" x2="245" y2="180" stroke="#4e342e" stroke-width="1" opacity="0.4"/>
+              <!-- Port holes -->
+              <circle cx="100" cy="173" r="5" fill="#3e2723" stroke="#8d6e63" stroke-width="1.5"/>
+              <circle cx="150" cy="176" r="5" fill="#3e2723" stroke="#8d6e63" stroke-width="1.5"/>
+              <circle cx="200" cy="173" r="5" fill="#3e2723" stroke="#8d6e63" stroke-width="1.5"/>
+              <circle cx="100" cy="173" r="2.5" fill="#f4c542" opacity="0.4"/>
+              <circle cx="150" cy="176" r="2.5" fill="#f4c542" opacity="0.4"/>
+              <circle cx="200" cy="173" r="2.5" fill="#f4c542" opacity="0.4"/>
+              <!-- Main mast -->
+              <rect x="147" y="30" width="6" height="130" fill="#4e342e" rx="2"/>
+              <!-- Crow's nest -->
+              <rect x="138" y="28" width="24" height="6" fill="#5d4037" rx="2"/>
+              <rect x="140" y="20" width="20" height="10" fill="#4e342e" rx="1"/>
+              <!-- Main sail -->
+              <path d="M155,45 Q200,65 195,110 L155,110 Z" fill="#e8e8e8" opacity="0.7"/>
+              <path d="M145,45 Q100,65 105,110 L145,110 Z" fill="#e8e8e8" opacity="0.7"/>
+              <!-- Skull on sail -->
+              <circle cx="150" cy="80" r="8" fill="none" stroke="#333" stroke-width="1.5" opacity="0.6"/>
+              <line x1="150" y1="88" x2="150" y2="98" stroke="#333" stroke-width="1.5" opacity="0.6"/>
+              <line x1="143" y1="92" x2="157" y2="92" stroke="#333" stroke-width="1.5" opacity="0.6"/>
+              <!-- Jolly Roger flag -->
+              <rect x="150" y="18" width="30" height="18" fill="#1a1a1a" rx="1"/>
+              <circle cx="165" cy="24" r="3" fill="#fff" opacity="0.9"/>
+              <line x1="161" y1="29" x2="169" y2="29" stroke="#fff" stroke-width="1" opacity="0.9"/>
+              <!-- Front mast -->
+              <rect x="82" y="60" width="5" height="95" fill="#4e342e" rx="2"/>
+              <path d="M88,70 Q120,85 115,120 L88,120 Z" fill="#e8e8e8" opacity="0.6"/>
+              <!-- Bowsprit -->
+              <line x1="40" y1="152" x2="10" y2="135" stroke="#5d4037" stroke-width="4" stroke-linecap="round"/>
+              <!-- Pirate 1 (at crow's nest, looking through telescope) -->
+              <circle cx="150" cy="14" r="5" fill="#fde0b0"/>
+              <rect x="143" y="8" width="14" height="4" fill="#c0392b" rx="1"/>
+              <circle cx="148" cy="14" r="1" fill="#333"/>
+              <circle cx="153" cy="13.5" r="1.5" fill="#1a1a1a"/>
+              <line x1="155" y1="13" x2="168" y2="10" stroke="#8d6e63" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="170" cy="9.5" r="3" fill="#546e7a" stroke="#37474f" stroke-width="0.5"/>
+              <!-- Pirate 2 (on deck, waving sword) -->
+              <circle cx="110" cy="140" r="6" fill="#fde0b0"/>
+              <rect x="101" y="133" width="18" height="5" fill="#c0392b" rx="1"/>
+              <circle cx="108" cy="140" r="1" fill="#333"/>
+              <circle cx="113" cy="140" r="1" fill="#333"/>
+              <path d="M107,143 Q110,145 113,143" fill="none" stroke="#333" stroke-width="0.6"/>
+              <rect x="105" y="146" width="10" height="8" fill="#c0392b" rx="1"/>
+              <line x1="116" y1="142" x2="128" y2="132" stroke="#ccc" stroke-width="2" stroke-linecap="round"/>
+              <!-- Pirate 3 (captain at wheel) -->
+              <circle cx="220" cy="138" r="6" fill="#fde0b0"/>
+              <rect x="211" y="131" width="18" height="5" fill="#1a1a1a" rx="1"/>
+              <circle cx="218" cy="138" r="1" fill="#333"/>
+              <circle cx="223" cy="138" r="1" fill="#333"/>
+              <path d="M215,141 Q220,147 225,141" fill="#333" opacity="0.6"/>
+              <rect x="215" y="144" width="10" height="8" fill="#1a1a1a" rx="1"/>
+              <!-- Ship wheel -->
+              <circle cx="232" cy="145" r="7" fill="none" stroke="#8d6e63" stroke-width="2"/>
+              <line x1="232" y1="138" x2="232" y2="152" stroke="#8d6e63" stroke-width="1.5"/>
+              <line x1="225" y1="145" x2="239" y2="145" stroke="#8d6e63" stroke-width="1.5"/>
+            </svg>
+            <!-- Pirate speech bubbles -->
+            <div class="pirate-bubble pirate-bubble--1">
+              <p>ARRR!</p>
+            </div>
+            <div class="pirate-bubble pirate-bubble--2">
+              <p>Geef me het elfenstof, maatje!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Persistent invitation sparkles -->
+      <div id="invite-sparkles" class="invite-sparkles" aria-hidden="true"></div>
+      <!-- Persistent floating fairies in invitation -->
+      <div id="invite-fairies" class="invite-fairies" aria-hidden="true"></div>
+
+      <!-- Hero Section -->
+      <section class="section section--hero">
+        <div class="section__inner">
+          <h1 class="hero__title">Elfenfeest!</h1>
+          <p class="hero__subtitle">
+            Sam nodigt je uit voor een magisch elfenfeest!
+          </p>
+          <div class="hero__fairy-dust" aria-hidden="true"></div>
+          <div class="scroll-hint" id="scroll-hint" aria-hidden="true">
+            <span class="scroll-hint__arrow">&#8595;</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Activities Section -->
+      <section class="section section--activities reveal">
+        <div class="section__inner">
+          <div class="section-divider" aria-hidden="true"></div>
+          <h2 class="section__title">Wat gaan we doen?</h2>
+          <div class="cards">
+            <div class="card">
+              <div class="card__icon" aria-hidden="true">&#129498;</div>
+              <h3 class="card__title">Elfenvleugels maken</h3>
+              <p class="card__text">
+                Maak je eigen magische elfenvleugels om mee te vliegen door het betoverde bos!
+              </p>
+            </div>
+            <div class="card">
+              <div class="card__icon" aria-hidden="true">&#127912;</div>
+              <h3 class="card__title">Knutselen</h3>
+              <p class="card__text">
+                Toverstafjes, tiaraatjes en andere elfenspulletjes maken!
+              </p>
+            </div>
+            <div class="card">
+              <div class="card__icon" aria-hidden="true">&#127916;</div>
+              <h3 class="card__title">Tinkerbell & de piraten kijken</h3>
+              <p class="card__text">
+                Samen genieten van een magische film vol avontuur!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dress Code Section -->
+      <section class="section section--dresscode reveal">
+        <div class="section__inner">
+          <div class="section-divider" aria-hidden="true"></div>
+          <h2 class="section__title">Wat trek je aan?</h2>
+          <p class="dresscode__text">
+            Verkleed je als wat je maar wilt! Een elf, een fee, een kabouter...
+            alles mag! Maar het hoeft niet hoor, gewone kleren zijn ook prima.
+          </p>
+          <p class="dresscode__text dresscode__text--parents">
+            Papa's en mama's zijn ook welkom en mogen zich ook verkleden!
+          </p>
+        </div>
+      </section>
+
+      <!-- Details Section -->
+      <section class="section section--details reveal">
+        <div class="section__inner">
+          <div class="section-divider" aria-hidden="true"></div>
+          <h2 class="section__title">Wanneer & waar?</h2>
+          <div class="details">
+            <div class="details__item">
+              <span class="details__icon" aria-hidden="true">&#128197;</span>
+              <div>
+                <strong>Datum</strong>
+                <p>[datum invullen]</p>
+              </div>
+            </div>
+            <div class="details__item">
+              <span class="details__icon" aria-hidden="true">&#128336;</span>
+              <div>
+                <strong>Tijd</strong>
+                <p>[tijd invullen]</p>
+              </div>
+            </div>
+            <div class="details__item">
+              <span class="details__icon" aria-hidden="true">&#128205;</span>
+              <div>
+                <strong>Waar</strong>
+                <p>[adres invullen]</p>
+              </div>
+            </div>
+          </div>
+          <div class="signoff">
+            <p>Tot dan!</p>
+            <p class="signoff__name">Liefs, Sam</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- RSVP Section -->
+      <section class="section section--rsvp reveal">
+        <div class="section__inner">
+          <div class="section-divider" aria-hidden="true"></div>
+          <h2 class="section__title">Kom je ook?</h2>
+          <p class="rsvp__subtitle">Laat het ons weten!</p>
+          <div class="rsvp__form-wrapper">
+            <iframe
+              class="rsvp__iframe"
+              src="https://docs.google.com/forms/d/e/PLACEHOLDER/viewform?embedded=true"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              title="RSVP formulier"
+              loading="lazy"
+            >Laden...</iframe>
+          </div>
+          <p class="rsvp__fallback">
+            Werkt het formulier niet?
+            <a href="https://docs.google.com/forms/d/e/PLACEHOLDER/viewform" target="_blank" rel="noopener noreferrer">Klik dan hier</a>
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
